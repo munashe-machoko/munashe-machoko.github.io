@@ -1,107 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
   <title>Big Pharma’s Pricing Playbook Is Backwards — Cut Prices, Grow Profits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Lilly’s GLP-1 surge shows what happens when pricing finally meets basic economics." />
-  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    /* ====== Reset & Base ====== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      background-color: #ffffff;
+      color: #111;
+      line-height: 1.7;
+    }
+
+    /* ====== Header ====== */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.9);
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .header-inner {
+      max-width: 860px; margin: 0 auto; padding: 0.75rem 1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .brand { font-weight: 600; color: #222; font-size: 0.95rem; }
+    .meta { color: #555; font-size: 0.85rem; display: flex; gap: 0.75rem; align-items: center; }
+    .chip { border: 1px solid #ddd; padding: 0.2rem 0.5rem; border-radius: 999px; }
+
+    /* ====== Progress Bar ====== */
+    .progress-wrap { position: relative; height: 4px; background: #f5f5f5; }
+    .progress { position:absolute; left:0; top:0; height:4px; width:0%; background: #0070c9; }
+
+    /* ====== Main Article ====== */
+    main { max-width: 740px; margin: 2rem auto 4rem; padding: 0 1rem; }
+
+    article header h1 {
+      font-weight: 700;
+      font-size: 2.3rem;
+      line-height: 1.25;
+      margin: 0.25rem 0 0.25rem;
+    }
+    .subhead {
+      font-size: 1.1rem;
+      color: #444;
+      margin-top: 0.25rem;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .byline {
+      margin-top: 1rem;
+      color: #777;
+      font-size: 0.95rem;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    hr { border: none; border-top: 1px solid #e0e0e0; margin: 2rem 0; }
+
+    /* ====== Content ====== */
+    h2 {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: #111;
+    }
+    p { margin: 0.75rem 0; }
+    ul { margin: 0.75rem 0 0.75rem 1.25rem; }
+    a { color: #0070c9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note {
+      font-size: 0.9rem;
+      color: #666;
+      border-left: 3px solid #e0e0e0;
+      padding-left: 0.75rem;
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      border-top: 1px solid #e0e0e0;
+      color: #666;
+      padding-top: 1.25rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    .share {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      color: #111;
+      padding: 0.45rem 0.7rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+    .btn:hover { background: #f0f0f0; }
+  </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a href="../index.html" class="site-title">Munashe Machoko</a>
-      <nav class="site-nav">
-        <a href="../index.html">Home</a>
-        <a href="../blog/index.html">Blog</a>
-      </nav>
+  <!-- Header -->
+  <div class="site-header">
+    <div class="header-inner">
+      <div class="brand">Munashe Machoko — Blog</div>
+      <div class="meta">
+        <span class="chip" id="readTime">~6 min read</span>
+        <span class="chip">Healthcare</span>
+        <span class="chip">Economics</span>
+        <span class="chip">Pricing</span>
+      </div>
     </div>
-  </header>
+    <div class="progress-wrap"><div class="progress" id="progressBar"></div></div>
+  </div>
 
-  <main class="container">
-    <article class="post">
-      <p class="post-kicker">Healthcare · Economics · Pricing</p>
-      <h1 class="post-title">Big Pharma’s Pricing Playbook Is Backwards — Cut Prices, Grow Profits</h1>
-      <p class="post-dek">Lilly’s GLP-1 surge shows what happens when pricing finally meets basic economics.</p>
+  <main>
+    <article>
+      <header>
+        <h1>Big Pharma’s Pricing Playbook Is Backwards — Cut Prices, Grow Profits</h1>
+        <div class="subhead">
+          Lilly’s GLP-1 surge shows what happens when pricing finally meets basic economics.
+        </div>
+        <div class="byline">
+          By <strong>Munashe Machoko</strong><br>
+          Tuck MBA | Healthcare, Data Analytics, and Finance Enthusiast<br>
+          <em>Published April 9, 2026</em>
+        </div>
+      </header>
 
-      <div class="post-meta">
-        <span>By Munashe Machoko</span>
-        <span>·</span>
-        <span>April 9, 2026</span>
-      </div>
+      <hr>
 
-      <div class="post-body">
-        <p>The U.S. pharmaceutical industry is no stranger to shocks—clinical failures, patent cliffs, regulatory surprises. It has built an identity around navigating uncertainty. And yet, when it comes to pricing—arguably the most controllable lever it has—it often behaves as if it has learned nothing at all.</p>
+      <p>The U.S. pharmaceutical industry is no stranger to shocks—clinical failures, patent cliffs, regulatory surprises. It has built an identity around navigating uncertainty. And yet, when it comes to pricing—arguably the most controllable lever it has—it often behaves as if it has learned nothing at all.</p>
 
-        <p>It took a government push to force action on drug prices. And even now, many in the industry fail to recognize the moment for what it is: not a threat, but an opportunity.</p>
+      <p>It took a government push to force action on drug prices. And even now, many in the industry fail to recognize the moment for what it is: not a threat, but an opportunity.</p>
 
-        <p>Public opinion on drug pricing in the United States is one of rare consensus. Everyone agrees on at least one thing—prescription drugs are too expensive. The debate is typically framed around list prices, which can run into the thousands of dollars. But that is only part of the story.</p>
+      <p>Public opinion on drug pricing in the United States is one of rare consensus. Everyone agrees on at least one thing—prescription drugs are too expensive. The debate is typically framed around list prices, which can run into the thousands of dollars. But that is only part of the story.</p>
 
-        <p>Behind the scenes sits a complex web of insurers, pharmacy benefit managers, rebates, and negotiated discounts. For most patients who need these drugs—particularly those using them for chronic conditions like diabetes—the system, for all its flaws, often works to reduce what they actually pay at the pharmacy counter. Insurance coverage, copay assistance, and patient support programs mean that out-of-pocket costs are frequently far lower than the headline price.</p>
+      <p>Behind the scenes sits a complex web of insurers, pharmacy benefit managers, rebates, and negotiated discounts. For most patients who need these drugs—particularly those using them for chronic conditions like diabetes—the system, for all its flaws, often works to reduce what they actually pay at the pharmacy counter. Insurance coverage, copay assistance, and patient support programs mean that out-of-pocket costs are frequently far lower than the headline price.</p>
 
-        <p>This distinction matters. Because the real pricing problem—and opportunity—lies elsewhere.</p>
+      <p>This distinction matters. Because the real pricing problem—and opportunity—lies elsewhere.</p>
 
-        <p>Strip away the complexity and consider the instinct of a profit-maximizing firm. In a market with pricing power, the default strategy is simple: charge a premium, capture the rents, and accept that some consumers will be priced out.</p>
+      <p>Strip away the complexity and consider the instinct of a profit-maximizing firm. In a market with pricing power, the default strategy is simple: charge a premium, capture the rents, and accept that some consumers will be priced out.</p>
 
-        <p>But in pharmaceuticals, that instinct can be deeply flawed.</p>
+      <p>But in pharmaceuticals, that instinct can be deeply flawed.</p>
 
-        <p>High prices do not always mean higher profits. And if firms are not maximizing profits, then what exactly are they optimizing?</p>
+      <p>High prices do not always mean higher profits. And if firms are not maximizing profits, then what exactly are they optimizing?</p>
 
-        <p>The answer is not complicated. Lower prices, expand volume, and let demand do the rest.</p>
+      <p>The answer is not complicated. Lower prices, expand volume, and let demand do the rest.</p>
 
-        <p>The evidence is hiding in plain sight.</p>
+      <p>The evidence is hiding in plain sight.</p>
 
-        <p>On page 49 of Eli Lilly’s 2025 10-K, the numbers tell a remarkable story. Mounjaro and Zepbound now account for nearly half of the company’s business. Between 2024 and 2025, Mounjaro revenues grew 99%. Zepbound grew 175%.</p>
+      <p>On page 49 of Eli Lilly’s 2025 10-K, the numbers tell a remarkable story. Mounjaro and Zepbound now account for nearly half of the company’s business. Between 2024 and 2025, Mounjaro revenues grew 99%. Zepbound grew 175%.</p>
 
-        <p>This was not driven by price increases. It was driven by volume.</p>
+      <p>This was not driven by price increases. It was driven by volume.</p>
 
-        <p>And the bottom line followed. Lilly’s profits rose 95% over the same period.</p>
+      <p>And the bottom line followed. Lilly’s profits rose 95% over the same period.</p>
 
-        <p>This is economics at work.</p>
+      <p>This is economics at work.</p>
 
-        <p>What Lilly has effectively done—whether explicitly or not—is operate across two distinct markets.</p>
+      <p>What Lilly has effectively done—whether explicitly or not—is operate across two distinct markets.</p>
 
-        <p>First, the medical-necessity market: patients using these drugs for conditions like diabetes. Demand here is inelastic. Patients need the drug, and critically, many are insured. The system—through insurers, PBMs, and manufacturer support programs—helps ensure access, often at relatively low out-of-pocket cost compared to the list price.</p>
+      <p>First, the medical-necessity market: patients using these drugs for conditions like diabetes. Demand here is inelastic. Patients need the drug, and critically, many are insured. The system—through insurers, PBMs, and manufacturer support programs—helps ensure access, often at relatively low out-of-pocket cost compared to the list price.</p>
 
-        <p>Second, the weight-management market: a far more price-sensitive segment. Here, demand is highly elastic. Many patients pay out of pocket, and high prices act as a hard barrier to entry.</p>
+      <p>Second, the weight-management market: a far more price-sensitive segment. Here, demand is highly elastic. Many patients pay out of pocket, and high prices act as a hard barrier to entry.</p>
 
-        <p>These markets should not be priced the same. And increasingly, they are not.</p>
+      <p>These markets should not be priced the same. And increasingly, they are not.</p>
 
-        <p>When prices were lowered—partly under policy pressure—something counterintuitive happened. Demand surged. Not because previously treated patients consumed more, but because entirely new consumers entered the market.</p>
+      <p>When prices were lowered—partly under policy pressure—something counterintuitive happened. Demand surged. Not because previously treated patients consumed more, but because entirely new consumers entered the market.</p>
 
-        <p>Lilly leaned into this dynamic. With LillyDirect, it created a direct-to-consumer channel that dramatically reduced prices for those outside traditional insurance coverage. Patients who might have faced monthly costs near $1,000 could now access the drug for roughly $245.</p>
+      <p>Lilly leaned into this dynamic. With LillyDirect, it created a direct-to-consumer channel that dramatically reduced prices for those outside traditional insurance coverage. Patients who might have faced monthly costs near $1,000 could now access the drug for roughly $245.</p>
 
-        <p>This is the key point: lower prices were not about undercutting access for those who need the drug. Those patients were already largely protected by insurance and support systems. Instead, lower prices unlocked an entirely new, highly elastic market that had been excluded.</p>
+      <p>This is the key point: lower prices were not about undercutting access for those who need the drug. Those patients were already largely protected by insurance and support systems. Instead, lower prices unlocked an entirely new, highly elastic market that had been excluded.</p>
 
-        <p>This is not a trade-off between access and profitability.</p>
+      <p>This is not a trade-off between access and profitability.</p>
 
-        <p>It is a case of aligning pricing with demand.</p>
+      <p>It is a case of aligning pricing with demand.</p>
 
-        <p>By segmenting the market—maintaining structured, insured access for medical-need patients while lowering prices for cash-paying consumers—Lilly expanded both access and profits.</p>
+      <p>By segmenting the market—maintaining structured, insured access for medical-need patients while lowering prices for cash-paying consumers—Lilly expanded both access and profits.</p>
 
-        <p>The result? More patients treated, higher revenues, and stronger margins.</p>
+      <p>The result? More patients treated, higher revenues, and stronger margins.</p>
 
-        <p>And yet, much of the industry still clings to a blunt approach—high prices across the board, restricted access, and the assumption that scarcity equals value.</p>
+      <p>And yet, much of the industry still clings to a blunt approach—high prices across the board, restricted access, and the assumption that scarcity equals value.</p>
 
-        <p>That logic is outdated.</p>
+      <p>That logic is outdated.</p>
 
-        <p>Pricing is not an art. It is a science.</p>
+      <p>Pricing is not an art. It is a science.</p>
 
-        <p>In markets with pricing power, the temptation is to restrict output and protect margins. But modern firms have the tools to do far better—to map demand in real time, understand elasticity at a granular level, and optimize pricing with precision.</p>
+      <p>In markets with pricing power, the temptation is to restrict output and protect margins. But modern firms have the tools to do far better—to map demand in real time, understand elasticity at a granular level, and optimize pricing with precision.</p>
 
-        <p>That means returning to fundamentals: marginal revenue, marginal cost, and the profit-maximizing quantity.</p>
+      <p>That means returning to fundamentals: marginal revenue, marginal cost, and the profit-maximizing quantity.</p>
 
-        <p>The deeper lesson is broader than pharmaceuticals. Many of the tensions in modern capitalism—access, affordability, inequality—are not always the result of flawed markets. Often, they stem from firms failing to apply the very principles those markets are built on.</p>
+      <p>The deeper lesson is broader than pharmaceuticals. Many of the tensions in modern capitalism—access, affordability, inequality—are not always the result of flawed markets. Often, they stem from firms failing to apply the very principles those markets are built on.</p>
 
-        <p>Sometimes, the solution is not more complexity.</p>
+      <p>Sometimes, the solution is not more complexity.</p>
 
-        <p>It is going back to first principles.</p>
+      <p>It is going back to first principles.</p>
 
-        <p>In my next piece, I’ll explore Cipla—a company that embraced these fundamentals early, and in doing so, reshaped access to life-saving drugs.</p>
+      <p>In my next piece, I’ll explore Cipla—a company that embraced these fundamentals early, and in doing so, reshaped access to life-saving drugs.</p>
 
-        <p>At the end of the day, it all comes back to price—the most powerful signal, and the most misunderstood tool, in capitalism.</p>
-      </div>
+      <p>At the end of the day, it all comes back to price—the most powerful signal, and the most misunderstood tool, in capitalism.</p>
+
+      <footer>
+        © 2025–2026 Munashe Machoko — Opinions are my own. This article is for educational purposes only and does not constitute investment advice.<br>
+        Information in this article is based on public company disclosures, earnings materials, and publicly available materials. For source details or to discuss the topic, feel free to connect with me on LinkedIn.
+        <div class="share">
+          <button class="btn" id="topBtn">Back to top</button>
+        </div>
+      </footer>
     </article>
   </main>
+
+  <script>
+    // Progress bar
+    const progressBar = document.getElementById('progressBar');
+    document.addEventListener('scroll', () => {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.scrollY / docH) * 100;
+      progressBar.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+    });
+
+    // Estimated read time
+    (function estimateReadTime(){
+      const text = document.body.innerText || '';
+      const words = text.trim().split(/\s+/).length;
+      const mins = Math.max(1, Math.round(words / 225));
+      const chip = document.getElementById('readTime');
+      if (chip) chip.textContent = `~${mins} min read`;
+    })();
+
+    // Back to top
+    document.getElementById('topBtn')?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
