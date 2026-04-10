@@ -27,7 +27,7 @@
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .brand { font-weight: 600; color: #222; font-size: 0.95rem; }
-    .meta { color: #555; font-size: 0.85rem; display: flex; gap: 0.75rem; align-items: center; }
+    .meta { color: #555; font-size: 0.85rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
     .chip { border: 1px solid #ddd; padding: 0.2rem 0.5rem; border-radius: 999px; }
 
     .progress-wrap { position: relative; height: 4px; background: #f5f5f5; }
@@ -55,7 +55,6 @@
     }
     hr { border: none; border-top: 1px solid #e0e0e0; margin: 2rem 0; }
 
-    /* IMAGE */
     .lede img {
       display: block;
       width: 100%;
@@ -78,6 +77,8 @@
       color: #111;
     }
     p { margin: 0.75rem 0; }
+    a { color: #0070c9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     footer {
       border-top: 1px solid #e0e0e0;
@@ -86,12 +87,27 @@
       font-size: 0.9rem;
       margin-top: 3rem;
     }
+    .share {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
     .btn {
       border: 1px solid #ddd;
       background: #f9f9f9;
+      color: #111;
       padding: 0.45rem 0.7rem;
       border-radius: 8px;
       cursor: pointer;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+    .btn:hover { background: #f0f0f0; }
+
+    @media (max-width: 640px) {
+      article header h1 { font-size: 2rem; }
+      .header-inner { align-items: flex-start; gap: 0.75rem; }
     }
   </style>
 </head>
@@ -126,7 +142,6 @@
 
       <hr>
 
-      <!-- IMAGE -->
       <div class="lede">
         <img src="../assets/GLP1.png" alt="GLP-1 drugs illustration">
         <div class="caption">
@@ -134,82 +149,39 @@
         </div>
       </div>
 
-      <!-- CONTENT -->
-      <p>The U.S. pharmaceutical industry is no stranger to shocks—clinical failures, patent cliffs, regulatory surprises. It has built an identity around navigating uncertainty. And yet, when it comes to pricing—arguably the most controllable lever it has—it often behaves as if it has learned nothing at all.</p>
+      <p>The U.S. pharmaceutical industry operates in one of the most complex business environments on earth. It shoulders enormous R&amp;D risk, navigates a labyrinthine regulatory landscape, and funds the clinical failures of tomorrow with the commercial successes of today. These are not trivial constraints, and anyone who reduces the drug pricing debate to simple villainy has not spent much time understanding how medicines actually reach patients.</p>
 
-      <p>It took a government push to force action on drug prices. And even now, many in the industry fail to recognize the moment for what it is: not a threat, but an opportunity.</p>
+      <p>With that context firmly in place, consider what Eli Lilly's 2025 annual report quietly revealed: that one of the most powerful growth levers available to the industry had been sitting largely unexploited — and that accessing it required rethinking a deeply ingrained assumption about how to price drugs in markets with very different kinds of buyers.</p>
 
-      <p>Public opinion on drug pricing in the United States is one of rare consensus. Everyone agrees on at least one thing—prescription drugs are too expensive. The debate is typically framed around list prices, which can run into the thousands of dollars. But that is only part of the story.</p>
+      <p>Page 49 of Lilly's 10-K contains numbers worth pausing on. Mounjaro, the company's flagship GLP-1 therapy, saw revenues climb 99 percent year over year. Zepbound, its obesity-indicated counterpart, posted revenue growth of 175 percent. Both gains were driven almost entirely by volume — meaning more patients accessing treatment, not higher prices per patient. Net profits followed, rising 95 percent.</p>
 
-      <p>Behind the scenes sits a complex web of insurers, pharmacy benefit managers, rebates, and negotiated discounts. For most patients who need these drugs—particularly those using them for chronic conditions like diabetes—the system, for all its flaws, often works to reduce what they actually pay at the pharmacy counter. Insurance coverage, copay assistance, and patient support programs mean that out-of-pocket costs are frequently far lower than the headline price.</p>
+      <p>The economic mechanism behind these results is well-established, even if it is underappreciated in industry practice. GLP-1 drugs serve two meaningfully distinct patient populations — and it is critical to understand what distinguishes them before drawing any pricing conclusions. People managing Type 2 diabetes depend on these therapies for their health, and crucially, most are covered by insurance. That coverage structure means their out-of-pocket costs are largely insulated from list price changes; the insurer absorbs the bulk of the cost. For these patients, demand is relatively inelastic not because they are being exploited, but because the insurance system functions as it is designed to: absorbing cost and enabling access. The argument here is emphatically not that companies should charge diabetic patients more because they have no choice. Rather, it is that the existing insurance architecture already handles their access, so list price adjustments directed at the uninsured population do not meaningfully change what insured patients pay at the pharmacy counter.</p>
 
-      <p>This distinction matters. Because the real pricing problem—and opportunity—lies elsewhere.</p>
+      <p>People seeking treatment for obesity, by contrast, face a very different insurance landscape: many plans do not cover GLP-1s for weight management, leaving patients to pay out of pocket. For this population, demand is highly elastic — price is the primary determinant of access. These are the patients who, at a $1,000 monthly list price, simply go without.</p>
 
-      <p>Strip away the complexity and consider the instinct of a profit-maximizing firm. In a market with pricing power, the default strategy is simple: charge a premium, capture the rents, and accept that some consumers will be priced out.</p>
+      <p>In elastic markets, the mathematics of pricing work in a counterintuitive but well-documented way. When a producer with meaningful market power — as Lilly has in this therapeutic category — reduces prices, the proportional increase in demand exceeds the proportional price reduction. Volume surges. And for a company with the manufacturing scale and operational leverage of a large pharmaceutical firm, that volume surge translates directly to the bottom line. This is not new theory. It is the foundational logic of market segmentation and price discrimination, and it has been sitting in economics textbooks for generations.</p>
 
-      <p>But in pharmaceuticals, that instinct can be deeply flawed.</p>
+      <p>The practical mechanism Lilly used to unlock this value was LillyDirect, a direct-to-consumer platform that bypasses the traditional distribution chain. At a list price of roughly $1,000 per month, GLP-1 therapies were effectively inaccessible to uninsured or underinsured patients in the obesity market. Through LillyDirect, that price fell to $245 per month — and a previously excluded population entered the market in significant numbers. The platform serves a dual strategic purpose: it compresses the gap between manufacturer and patient, and it generates direct demand data that improves future pricing and commercial decisions.</p>
 
-      <p>High prices do not always mean higher profits. And if firms are not maximizing profits, then what exactly are they optimizing?</p>
+      <p>It is worth noting that the external context here mattered. The current administration's pursuit of a Most Favored Nation pricing policy prompted negotiations between government and industry that accelerated these price adjustments. The fact that lower prices coincided with, rather than undermined, Lilly's profit growth was not the outcome the industry predicted — and that gap between prediction and result is itself informative. It suggests that the intuition guiding some pricing decisions may be less well-calibrated to actual demand conditions than the tools now available to the industry would permit.</p>
 
-      <p>The answer is not complicated. Lower prices, expand volume, and let demand do the rest.</p>
+      <p>None of this is to suggest that pharmaceutical pricing is straightforward, or that a single case study resolves the broader policy debate. The rebate system, pharmacy benefit managers, formulary design, and payer negotiations all shape the prices patients actually pay in ways that defy simple summary. R&amp;D economics remain genuinely difficult: the cost of developing a new molecular entity has risen steadily for decades, and the revenue from successful drugs must cross-subsidize a long trail of clinical failures. These structural realities constrain what any pricing strategy can accomplish.</p>
 
-      <p>The evidence is hiding in plain sight.</p>
+      <p>But structural complexity is distinct from analytical imprecision. The industry now has access to demand-modeling tools, real-time patient data, and granular cost accounting of a sophistication that previous generations of executives could not have imagined. The question worth asking — seriously, inside boardrooms and not only in policy hearings — is whether those tools are being fully deployed in pricing decisions, particularly for drugs that serve populations with very different price sensitivities.</p>
 
-      <p>On page 49 of Eli Lilly’s 2025 10-K, the numbers tell a remarkable story. Mounjaro and Zepbound now account for nearly half of the company’s business. Between 2024 and 2025, Mounjaro revenues grew 99%. Zepbound grew 175%.</p>
+      <p>Lilly's results suggest the returns to that analysis can be substantial. A framework that segments markets rigorously, matches price to elasticity in each, and invests in distribution channels that close the gap between list price and patient cost can simultaneously expand access and strengthen financial performance. That is not a forced trade-off between social good and shareholder value. It is, in the terms that matter most to a business, a better strategy.</p>
 
-      <p>This was not driven by price increases. It was driven by volume.</p>
+      <p>The pharmaceutical industry has earned, through decades of genuine scientific achievement, the right to be taken seriously as a partner in solving health challenges — not just as a target of political frustration. Exercising that standing means engaging rigorously with the economics of access, not just the economics of exclusivity. The companies that do so earliest will find, as Lilly did, that the market was larger than their pricing assumed.</p>
 
-      <p>And the bottom line followed. Lilly’s profits rose 95% over the same period.</p>
+      <p>At its core, pricing is the mechanism through which markets allocate resources and signal value. In pharmaceuticals, getting that mechanism right is not only good business — it is the clearest path toward aligning commercial success with the mission that gives the industry its social license in the first place.</p>
 
-      <p>This is economics at work.</p>
-
-      <p>What Lilly has effectively done—whether explicitly or not—is operate across two distinct markets.</p>
-
-      <p>First, the medical-necessity market: patients using these drugs for conditions like diabetes. Demand here is inelastic. Patients need the drug, and critically, many are insured. The system—through insurers, PBMs, and manufacturer support programs—helps ensure access, often at relatively low out-of-pocket cost compared to the list price.</p>
-
-      <p>Second, the weight-management market: a far more price-sensitive segment. Here, demand is highly elastic. Many patients pay out of pocket, and high prices act as a hard barrier to entry.</p>
-
-      <p>These markets should not be priced the same. And increasingly, they are not.</p>
-
-      <p>When prices were lowered—partly under policy pressure—something counterintuitive happened. Demand surged. Not because previously treated patients consumed more, but because entirely new consumers entered the market.</p>
-
-      <p>Lilly leaned into this dynamic. With LillyDirect, it created a direct-to-consumer channel that dramatically reduced prices for those outside traditional insurance coverage. Patients who might have faced monthly costs near $1,000 could now access the drug for roughly $245.</p>
-
-      <p>This is the key point: lower prices were not about undercutting access for those who need the drug. Those patients were already largely protected by insurance and support systems. Instead, lower prices unlocked an entirely new, highly elastic market that had been excluded.</p>
-
-      <p>This is not a trade-off between access and profitability.</p>
-
-      <p>It is a case of aligning pricing with demand.</p>
-
-      <p>By segmenting the market—maintaining structured, insured access for medical-need patients while lowering prices for cash-paying consumers—Lilly expanded both access and profits.</p>
-
-      <p>The result? More patients treated, higher revenues, and stronger margins.</p>
-
-      <p>And yet, much of the industry still clings to a blunt approach—high prices across the board, restricted access, and the assumption that scarcity equals value.</p>
-
-      <p>That logic is outdated.</p>
-
-      <p>Pricing is not an art. It is a science.</p>
-
-      <p>In markets with pricing power, the temptation is to restrict output and protect margins. But modern firms have the tools to do far better—to map demand in real time, understand elasticity at a granular level, and optimize pricing with precision.</p>
-
-      <p>That means returning to fundamentals: marginal revenue, marginal cost, and the profit-maximizing quantity.</p>
-
-      <p>The deeper lesson is broader than pharmaceuticals. Many of the tensions in modern capitalism—access, affordability, inequality—are not always the result of flawed markets. Often, they stem from firms failing to apply the very principles those markets are built on.</p>
-
-      <p>Sometimes, the solution is not more complexity.</p>
-
-      <p>It is going back to first principles.</p>
-
-      <p>In my next piece, I’ll explore Cipla—a company that embraced these fundamentals early, and in doing so, reshaped access to life-saving drugs.</p>
-
-      <p>At the end of the day, it all comes back to price—the most powerful signal, and the most misunderstood tool, in capitalism.</p>
+      <p>Lilly's 2025 numbers are a proof of concept. The playbook is there for any company willing to run it.</p>
 
       <footer>
         © 2025–2026 Munashe Machoko — Opinions are my own. This article is for educational purposes only and does not constitute investment advice.<br>
-        Information in this article is based on peer-reviewed journal research, company disclosures, and publicly available materials. For source details or to discuss the topic, feel free to connect with me on LinkedIn.
-        <div>
-          <button class="btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</button>
+        Information in this article is based on company disclosures, and publicly available materials. For source details or to discuss the topic, feel free to connect with me on LinkedIn.
+        <div class="share">
+          <button class="btn" id="topBtn">Back to top</button>
         </div>
       </footer>
     </article>
@@ -220,7 +192,19 @@
     document.addEventListener('scroll', () => {
       const docH = document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = (window.scrollY / docH) * 100;
-      progressBar.style.width = scrolled + '%';
+      progressBar.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+    });
+
+    (function estimateReadTime(){
+      const text = document.body.innerText || '';
+      const words = text.trim().split(/\s+/).length;
+      const mins = Math.max(1, Math.round(words / 225));
+      const chip = document.getElementById('readTime');
+      if (chip) chip.textContent = `~${mins} min read`;
+    })();
+
+    document.getElementById('topBtn')?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
